@@ -1,0 +1,53 @@
+<script id="T_START" type="text/x-jsrender">
+
+
+<div class="div_p2" id="div_device_loading" >
+    <div style="height:60px;line-height:60px;color:#FFFFFF;text-align: center;background:rgba(255,255,255,0.1);border-radius:3px"
+    data-i18n-html="im_start_loading">
+
+    </div>
+</div>
+
+<div class="div_p2" id="div_device_nofound" style="display:none;">
+    <div style="height:60px;line-height:60px;color:#FFFFFF;text-align: center;background:rgba(255,255,255,0.1);border-radius:3px"
+    data-i18n-html="im_start_nofound">
+
+</div>
+</div>
+
+<div id="div_device_list" style="display:none">
+
+</div>
+<div class="div_p2" style="margin-top:20px;height:50px">
+    <div style="float:left;width:70%;height:50px;text-align:center;background-color:rgba(255,255,255,0.1);color:#FFFFFF;line-height:50px;" onclick="addDevice();">
+        <span style="font-size:25px;padding-left:5px;padding-right:5px">+</span>
+        <span data-i18n-html="ib_add_device">添加控制器</span>
+    </div>
+    <div style="float:right;width:30%;height:50px;padding-left:10px;">
+    <div onclick="show_device_list()" style="width:100%;height:50px;text-align:center;background-color:rgba(255,255,255,0.1);color:#FFFFFF;line-height:50px;" data-i18n-html="ib_refresh">
+        刷新
+    </div>
+    </div>
+</div>
+</script>
+
+<script id="T_DEVICE_LIST" type="text/x-jsrender">
+<div class="div_p2" style="margin-top:10px;">
+    {{for list}}
+    <div  class="div_p2 flex_center" style="margin-top:10px;height:100px;padding-top:10px;padding-bottom:10px;background:rgba(255,255,255,0.1);border-radius:3px" onclick="showDevice('{{:id}}')">
+        <img src="{{:image}}" style="width:60px;height:60px">
+        <div style="flex-grow:1;padding-left:10px;height:80px;color:rgba(255,255,255,0.7)">
+            <div style="height:32px;line-height:32px;font-size:20px;width:100%">{{:name}}</div>
+            <div style="height:48px;width:100%">
+                <div style="float:left;font-size:12px;line-height:24px">
+                    <div>{{:ip}}</div>
+                    <div>{{:lasttime}}</div>
+                </div>
+                <div style="float:right;margin-top:12px;" class='btn_c2' style="height:30px;line-height:30px" data-i18n-html="ib_control">控制中心
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/for}}
+</div>
+</script>

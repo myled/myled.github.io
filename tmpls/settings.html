@@ -1,0 +1,146 @@
+<script id="T_SETTINGS" type="text/x-jsrender">
+    <div class="setting_item_p_p item_reboot" style="margin-top:20px;">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_reboot">重启控制器</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_timer">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_timer">定时开关机</div>
+            <div class="setting_item_right" style="width:200px;text-align:right;padding-right:30px;color:#F9C406;background-position:186px 8px;line-height:30px;" id="div_timer_set"></div>
+        </div>
+    </div>
+
+
+    <div class="setting_item_p_p item_net_bak">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_net">备用网络配置</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="setting_item_p_p item_layout_set" op="0">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_layout_0">重置布局</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_layout_set"  op="4">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_layout_1">水平翻转</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_layout_set"  op="5">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_layout_2">上下翻转</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_layout_set" op="6">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_layout_3">180度旋转</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+
+
+    <div class="setting_item_p_p item_device_name">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_name">名称设置</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_device_secret">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_secret">安全设置</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+    <div class="setting_item_p_p item_about">
+        <div class="setting_item_p">
+            <div class="setting_item_title" data-i18n-html="imenu_setting_about">关于</div>
+            <div class="setting_item_right">&nbsp;</div>
+        </div>
+    </div>
+
+</script>
+<script id="T_SETTING_ABOUT" type="text/x-jsrender">
+<div style="text-align:left;color:white;line-height:24px;">
+    <div style="padding-left:10px;color:#808080">{{:path}}<div>
+    <div>version:<span style="padding-left:10px;color:#808080">{{:version}}</span><div>
+    <div>protocol:<span style="padding-left:10px;color:#808080">{{:plat}}</span><div>
+    <div>device id:<span style="padding-left:10px;color:#808080">{{:devid}}</span><div>
+    <div>chip type:<span style="padding-left:10px;color:#808080">{{:chipType}}</span><div>
+    <div>firmware tag:<span style="padding-left:10px;color:#808080">{{:fwtag}}</span><div>
+    <div>firmware version:<span style="padding-left:10px;color:#808080">{{:fv}}</span><div>
+    <div>ip:<span style="padding-left:10px;color:#808080">{{:ip}}</span><div>
+    <div>device type:<span style="padding-left:10px;color:#808080">{{:type}}</span><div>
+    <div>width:<span style="padding-left:10px;color:#808080">{{:width}}</span><div>
+    <div>height:<span style="padding-left:10px;color:#808080">{{:height}}</span><div>
+    <div>freemem:<span style="padding-left:10px;color:#808080">{{:freemem}}</span><div>
+</div>
+</script>
+<script id="T_SETTING_NET_BAK" type="text/x-jsrender">
+ <div style="width:100%;padding:0px 25px 0px 25px">
+    <div class="setting_item_cc" style="width:100%;height:20px;">
+        <input id="in_bak_name" style="width:100%" class="setting_input" type="text" data-i18n-placeholder="im_setting_wifiname">
+    </div>
+    <div class="setting_item_cc"  style="width:100%;height:20px;">
+        <input id="in_bak_pass" style="width:100%" type="text" class="setting_input"  data-i18n-placeholder="im_setting_wifipass">
+    </div>
+ </div>
+</script>
+
+<script id="T_SETTING_TIMER" type="text/x-jsrender">
+<div style="width:100%">
+    <div><input type="checkbox" id="cb_timer_enable"><label for="cb_timer_enable" data-i18n-html="im_setting_enable_timer">启用定时开关灯</label></div>
+
+    <div style="margin-top:10px;width:100%">
+        <div style=" margin-bottom:20px;padding:10px;border-bottom:1px solid rgba(255,255,255,0.1)">
+        <span data-i18n-html="im_setting_on_time">开机时间</span>
+        <input id="in_timer_start"  style="margin-left:5px;color:#000000;line-height:30px;" type="time"></div>
+        <div style="padding:10px;">
+        <span data-i18n-html="im_setting_off_time">关机时间</span>
+        <input id="in_timer_close"  style="margin-left:5px;color:#000000;line-height:30px;" type="time"></div>
+    </div>
+</div>
+</script>
+
+<script id="T_SETTING_NAME" type="text/x-jsrender">
+<div style="width:100%;padding:0px 25px 0px 25px">
+    <div class="setting_item_cc" style="width:100%;height:20px;">
+        <input id="in_device_name" style="width:100%" class="setting_input" type="text"  data-i18n-placeholder="im_setting_devicename">
+    </div>
+</div>
+</script>
+<script id="T_SETTING_SECRET1" type="text/x-jsrender">
+ <div style="width:100%;padding:0px 25px 0px 25px">
+    <div class="setting_item_cc" style="width:100%;height:20px;">
+        <input id="in_secret_org" style="width:100%" class="setting_input" type="text"  data-i18n-placeholder="im_setting_oldpass">
+    </div>
+    <div class="setting_item_cc"  style="width:100%;height:20px;">
+        <input id="in_secret_new1" style="width:100%" type="text" class="setting_input" data-i18n-placeholder="im_setting_newpass" >
+    </div>
+    <div class="setting_item_cc"  style="width:100%;height:20px;">
+        <input id="in_secret_new2" style="width:100%" type="text" class="setting_input" data-i18n-placeholder="im_setting_renewpass" >
+    </div>
+    <div style="color:#F9C406;margin-top:15px;" data-i18n-html="im_setting_clear_secret">
+        不输入新密码，将清空密钥
+    </div>
+ </div>
+
+</script>
+
+<script id="T_SETTING_SECRET2" type="text/x-jsrender">
+   <div style="width:100%;padding:0px 25px 0px 25px">
+    <div class="setting_item_cc"  style="width:100%;height:20px;">
+        <input id="in_secret_new1" style="width:100%" type="text" class="setting_input" data-i18n-placeholder="im_setting_newpass" >
+    </div>
+    <div class="setting_item_cc"  style="width:100%;height:20px;">
+        <input id="in_secret_new2" style="width:100%" type="text" class="setting_input" data-i18n-placeholder="im_setting_renewpass" >
+    </div>
+
+ </div>
+</script>

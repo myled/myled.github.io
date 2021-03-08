@@ -1,0 +1,16 @@
+{
+  "name": "SmartPixels",
+  "start_url": "/index.html#?f=pwa",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "description": "SMART LEDS",
+  "prefer_related_applications":false,
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="title">SMART PIXELS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,max-width=400px, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/smart.css">
+    <script src="js/smart2.min.js?spV5_030804" type="text/javascript"></script>
+    <style>
+        body {
+            width: 100%;
+            background: #121A2A;
+        }
+        html {
+            /*overflow: hidden;*/
+        }
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body>
+
+<div style="width:100%;height:50px;;display: block" class="div_header">
+    <div style="float:left;width:10%">
+        <div style="float:left;width:50px;height:50px;" class="icon_p" onclick="home.go_back()">
+            <div class="icon_b1 go_back"></div>
+        </div>
+    </div>
+
+    <div id="device_name" style="float:left;height:50px;width:80%;color:white;line-height:50px;font-size:16px;display:flex;justify-content:center">
+        SMART PIXELS
+    </div>
+
+    <div style="height:50px;float:right;width:10%" onclick="home.go_setting();">
+        <div class="icon_b1 go_setting">
+
+        </div>
+    </div>
+</div>
+
+<div id="content" style="width: 100%;margin-top:50px;">
+
+</div>
+<div class="ctrl_menu_p_p" id="main_menu">
+    <div class="menu_item" m="ctrl"><div class="menu_ctrl menu_ctrl_on"></div></div>
+    <div class="menu_item" m="color"><div class="menu_color menu_color_off"></div></div>
+    <div class="menu_item" m="brush"><div class="menu_brush menu_brush_off"></div></div>
+    <div class="menu_item" m="text"><div class="menu_text menu_text_dis"></div></div>
+    <div class="menu_item" m="music"><div class="menu_music menu_music_dis"></div></div>
+
+</div>
+
+<div id="TPLS"></div>
+
+
+<div class="modal fade" id="choose-color-model" tabindex="-1" role="dialog"  aria-hidden="true" style="margin-top:5rem;">
+    <div class="modal-dialog">
+        <div class="modal-content" id="div_color_choose_dlg" style="background-color: rgba(50,50,50,0.85);height:400px">
+            <div class="modal-body" id="col-pan-sel" style="padding:2px;">
+                <div class="w-100" style="margin-top:1rem;height:4rem">
+                    <div class="icon_p" style="float:left">
+                        <div class="icon_b1 icon_color1_c icon_color_style" m="0"></div>
+                    </div>
+                    <div  class="icon_p" style="float:left">
+                        <div class="icon_b1 icon_color2_c icon_color_style" m="1"></div>
+                    </div>
+                    <div class="icon_p" style="float:left">
+                        <div class="icon_b1 icon_color3_c icon_color_style" m="2"></div>
+                    </div>
+
+                    <div  class="icon_p"  style="float:right">
+                        <div class="icon_b1 icon_close_c" data-dismiss="modal"></div>
+                    </div>
+                </div>
+
+                <div class="w-100" style="height:320px;padding:0.5rem">
+                    <div id="show_area" class="w-100" style="height:300px;text-align:center;padding-top:1rem">
+                        <canvas id="color_cav" style="margin:auto 0;width:300px;height:300px" width=360 height=360></canvas>
+                    </div>
+                </div>
+                <div class="w-100" id="color_choose_comm" style="display:block;height:60px;color:white;text-align: center">
+                    <div class="w-100" style="height:25px;">
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_0"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_1"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_2"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_3"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_4"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_5"></div></div>
+                        <div class="color_comm"><div class="color_comm2 color_comm2_2 color_comm_6"></div></div>
+                    </div>
+                    <div class="w-100" style="height:30px;padding-top:5px">
+                        <div class="color_comm"><div class="color_user_t  color_user_0"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_1"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_2"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_3"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_4"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_5"></div></div>
+                        <div class="color_comm"><div class="color_user_t color_comm2_2 color_user_6"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="qrcode_modal" tabindex="-1" role="dialog"  aria-hidden="true" style="margin-top:50px;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgba(200,200,200,0.9);">
+            <div class="modal-header" style="color:white">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title share_title">共享控制【DN00100010】</h4>
+            </div>
+            <div class="modal-body" id="qr_mod_body" style="padding:2px;width:300px;margin:0px auto">
+
+                <div style="width:260px;background-color: #CCC;padding:5px;border-radius:4px;margin:auto 0;margin-top:20px;margin-bottom:20px;margin-left:17px;" id="div_qrcode">
+
+                </div>
+                <div style="width: 100%;text-align: center;color:white;margin-bottom:10px;" class="share_time">有效时间：2021年1月6日 10:34:30</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="share-timeout_modal" tabindex="-1" role="dialog"  aria-hidden="true" style="margin-top:50px;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgba(200,200,200,0.9);">
+            <div class="modal-header" style="color:white">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title share_title" data-i18n-html="im_share_title"></h4>
+            </div>
+            <div class="modal-body" style="padding:2px;width:300px;height:200px;margin:0px auto">
+                <div style="color: white;padding:5px;border-radius:4px;margin:auto 0;margin-top:20px;margin-bottom:20px;font-size:20px" data-i18n-html="im_share_timeout">
+
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align:center">
+                <button type="button" style="height:3rem;width:50%" class="dn-btn" data-i18n-html="ib_close" data-dismiss="modal" ></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="device_login_modal" tabindex="-1" role="dialog"  aria-hidden="true" style="width: 100%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-i18n-html="ib_login">设备登录</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12" data-i18n-html="im_enter_key">
+                    输入安全密钥登录：
+                </div>
+                <div class="col-xs-12" id="device-login-notice" style="color:red;padding:1rem">
+
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" data-i18n-html="im_key">密钥</span>
+                    <input type="text" id="in-login-psk" class="form-control" data-i18n-placeholder="ph_key_len" style="text-align:left;">
+                </div>
+            </div>
+            <div style="margin-top:1rem;padding:10px;">
+                <span style="color:red;font-weight: bold" data-i18n-html="im_attention">注意：</span><span data-i18n-html="im_att_reset"></span>
+            </div>
+            <div class="modal-footer" style="text-align:center">
+                <button type="button" style="height:3rem" class="dn-btn btn-login-psk" data-i18n-html="ib_do_login">确认登录</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="public_dialog" tabindex="-1" role="dialog"  aria-hidden="true" style="width: 100%;top:60px;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="
+background: #1E293E;
+box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);padding:20px;">
+            <div class="modal-header" style="border-bottom:1px solid #FFFFFF30">
+                <div class="dialog_close" onclick="$('#public_dialog').modal('hide')">
+
+                </div>
+                <h4 class="modal-title pub-dialog-title" style="color:#FFFFFF">设备登录</h4>
+            </div>
+            <div class="modal-body  pub-dialog-body" style="color:#FFFFFF;min-height:100px;display:flex;  align-items:center;justify-content: center;vertical-align: middle">
+
+            </div>
+            <div class="modal-footer" style="display:none;text-align:center;border-top:0px;padding:20px 40px 20px 40px">
+                <div class="pub-dialog-btn btn_normal1" onclick="endPublicDialog()">确认登录</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<div id="divswip" style="width: 100%;position: absolute;top:100px;left:0px;height:100px;text-align: center;display: none">
+    <div style="margin:0 auto;width:240px;height:100px;background-color: #000000; border-radius:10px;">
+        <div class="icon_b1 icon_swip_left_c" style="float: left;margin-left:40px;margin-top:20px;width:80px;height:60px;"></div>
+        <div class="icon_b1 icon_swip_right_c" style="float: right;margin-right:40px;margin-top:20px;width:80px;height:60px;"></div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    var VERSION = "V1.0.4";
+    var PLAT = "LOCAL";
+    var protocol11 = document.location.protocol;
+    var host11 = document.location.hostname;
+    var path11 = document.location.pathname;
+    if (protocol11.indexOf("http") == 0) {
+        PLAT = "REMOTE";
+    }
+    var H5PATH = protocol11 + " " + host11 + " " + path11;
+
+
+    var home = new DeviceHome();
+    var RunSwipe = true;
+    var images = [];
+    function preload() {
+        var img_urls = ["images/n_open_eyes.png","images/n_close_eyes.png","images/icons.png","images/n_icon_kzq.png","images/n_icon_arrw.png","images/n_icon_x.png"];
+        for (i = 0; i < img_urls.length; i++) {
+            images[i] = new Image();
+            images[i].src = img_urls[i];
+        }
+    }
+
+    function web_init() {
+        home.initworkers();
+        preload();
+        $(".menu_item").on("click", function(){
+           home.selectMenu($(this).attr("m"));
+        });
+        var tpls = ["tmpls/device.html","tmpls/netconfig.html", "tmpls/settings.html"];
+
+        var loaded = 0;
+        for(var i = 0; i < tpls.length; i ++) {
+            $.get(tpls[i], function (data) {
+                $("#TPLS").append(data);
+                loaded ++;
+                if(loaded == tpls.length) {
+                    home.start();
+                }
+            });
+        }
+
+        RunSwipe = true;
+        var swipShow = false;
+        SwipeAction(function(type, pos){
+            if(!RunSwipe) return;
+            var x = pos.x2 - pos.x1;
+            if(x < 20 && x >= -20) {
+                if(swipShow) {
+                    $("#divswip").hide();
+                    swipShow = false;
+                }
+                return;
+            }
+
+            var zone = home.getZone(pos.y1);
+           // console.log("Swip ZONE:", zone);
+            if(type == 1 && (zone == "effshow" || zone == "color") && RunSwipe) {
+                swipShow = true;
+                $("#divswip").show();
+                if (x > 20) {
+                    $(".icon_swip_left_c").addClass("icon_disable");
+                    $(".icon_swip_right_c").removeClass("icon_disable");
+                } else if (x < -20) {
+                    $(".icon_swip_left_c").removeClass("icon_disable");
+                    $(".icon_swip_right_c").addClass("icon_disable");
+                }
+            }
+            if(type == 2 && (zone == "effshow" || zone == "color") && RunSwipe) {
+                setTimeout(function () {
+                    $("#divswip").hide();
+                    swipShow = false;
+                }, 300);
+            }
+
+            if(type == 1) {
+                return;
+            }
+
+
+            var lastop = home.lastOp();
+            console.log("lastop", lastop , x);
+            if("CTRL" == lastop) {
+                if(zone == "effshow") {
+                    if (x >= 20) {
+                        ctrl.runPrev();
+                    } else {
+                        ctrl.runNext();
+                    }
+                }
+                if(zone == "color") {
+                    if (x >= 20) {
+                        ctrl.nextColor(-1);
+                    } else {
+                        ctrl.nextColor(1);
+                    }
+                }
+            }
+        });
+
+
+
+    }
+
+    function go_home() {
+        var ua = checkNav();
+        if(ua.dnapp && ua.android) {
+            AppJS.home();
+        }
+        if(ua.dnapp && ua.ios) {
+            window.webkit.messageHandlers.gohome.postMessage("")
+            return;
+        }
+        window.location.href = "http://" + getUrlHost() + getUrlPath() + "index.html";
+    }
+
+
+</script>
+
+</html>

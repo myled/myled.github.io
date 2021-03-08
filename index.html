@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title data-i18n-html="im_title_home">SmartPixels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon.png" />
+
+
+    <link rel="stylesheet" href="css/smart.css">
+    <script src="js/smart1.min.js" type="text/javascript"></script>
+
+    <style>
+        html,body{
+            height:100%;
+            max-width:800px;
+            background: url(images/main_bg.png) no-repeat center;
+            background-size:100% 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="div_p2" style="height:50px;color:#FFFFFF;line-height: 5rem;">
+    <div style="float: left;">
+        <div style="height:2.2rem;padding-left:1rem;float:left"><img src="images/logo.png" style="width:30px;height:20px;"/></div>
+        <div style="height:2.2rem;padding-left:0.8rem;text-align: left;float:left" data-i18n-html="app_name"></div>
+    </div>
+    <div style="float:right;text-align:right;padding-right:2rem">
+        <a href="javascript:show_language();" style="text-decoration:none;margin-left:2rem;margin-right:5px;border-bottom:1px solid #CCCCCC;;color:#FFFFFF"  data-i18n-html="im_language">语言设置</a>
+    </div>
+</div>
+<div style="position:fixed;bottom:0px;width:100%;max-width:800px;">
+<div id="show_android" style="width:100%;background:#000000;display: none">
+    <div style="width:100%;padding:10px;background:#000000;color: #FFFFFF;position: relative;border-radius: 3px;">
+        <img src="images/n_icon_close.png" onclick="$('#show_android').hide()" style="width:25px;position: absolute;top:10px;right:10px;">
+        <div style="width:100%;margin-top:30px;" data-i18n-html="im_guide_android">
+            下载安装智能点控APP，更方便配网和操控彩灯。
+        </div>
+        <div style="width:100%">
+            <div style="width:100%;margin-top:15px" class="flex_center">
+                <div class="btn_c2" style="width:auto;height:30px;line-height:30px;" onclick="window.location.href='https://daniaokeji.com#download'" data-i18n-html="ib_install">下载安装</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div_p2" id="show_pwa" style="width:100%;background:#000000;display: none">
+    <div style="width:100%;padding:10px;color: #FFFFFF;position: relative;border-radius: 3px;">
+        <img src="images/n_icon_close.png" onclick="$('#show_pwa').hide()" style="width:25px;position: absolute;top:10px;right:10px;">
+
+        <div id="pwa-guide" style="width:100%;display:none">
+            <div style="width:100%;margin-top:30px;" data-i18n-html="im_guide_android">
+
+            </div>
+            <div style="width:100%">
+                <div style="width:100%;margin-top:15px" class="flex_center">
+                    <div class="btn_c2" style="width:auto;height:30px;line-height:30px;"  onclick="install_app()" data-i18n-html="ib_install_pwa">安装</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="safari-guide" class="guide" style="display:none;padding:5px;line-height:25px;">
+            <div>
+                <span>①</span><span data-i18n-html="im_guide_safari1">选择屏幕底部的分享按钮</span> <img style="vertical-align:middle;height:1.5rem" src="images/sendto.png" />
+            </div><div>
+            <span>②</span><span data-i18n-html="im_guide_safari2">选择"添加到主屏幕"，可以在主屏幕上生成应用图标。</span>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="content"></div>
+<div id="TPLS"></div>
+
+<div id="language-dial" class="modal fade dn-modal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" data-i18n-html="im_language">语言设置</h4>
+            </div>
+            <div class="modal-body row" style="font-size:1.2rem">
+                <div class="col-xs-12"style="height:300px;line-height:25px;overflow:auto">
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_en" value="en" onclick="set_Lang('en')"> <label for="lang_item_en">English</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_es" value="es" onclick="set_Lang('es')"> <label for="lang_item_es">Español</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_zh" value="zh" onclick="set_Lang('zh')"> <label for="lang_item_zh">中文</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_fr" value="fr" onclick="set_Lang('fr')"> <label for="lang_item_fr">Français</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_pt" value="pt" onclick="set_Lang('pt')"> <label for="lang_item_pt">Português</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_de" value="de" onclick="set_Lang('de')"> <label for="lang_item_de">Deutsch</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_ja" value="ja" onclick="set_Lang('ja')"> <label for="lang_item_ja">日本語</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_ru" value="ru" onclick="set_Lang('ru')"> <label for="lang_item_ru">русский язык</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_ko" value="ko" onclick="set_Lang('ko')"> <label for="lang_item_ko">한국어</label><br>
+                    <input class="lang_radio" type="radio" name="language" id="lang_item_ar" value="ar" onclick="set_Lang('ar')"> <label for="lang_item_ar">العربية</label><br>
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button class="dn-btn-m button" class="close" data-dismiss="modal" data-i18n-html="ib_close">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    var from = "0";
+    var deferredPrompt;
+    var addBtn = document.getElementById("div_notify_normal");
+    var addDiv = document.getElementById("add-div");
+
+    var h = window.location.hash;
+    console.log(h);
+
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+    });
+
+
+    function isInApp() {
+        return ["fullscreen", "standalone", "minimal-ui"].some(
+            (displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches
+    );
+    }
+
+    function getNavInfo() {
+        var ret = {weixin:false,mobile:false,android:false,window:false,linux:false,apple:false,firefox:false, ie:false,chrome:false,safari:false,iphone:false,ipad:false};
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf("windows") >= 0) {
+            ret.windown = true;
+        };
+        if(ua.indexOf("micromessenger") >= 0) ret.weixin = true;
+        if(ua.indexOf("windows") >= 0) ret.window = true;
+        if(ua.indexOf("linux") >= 0) ret.linux = true;
+        if(ua.indexOf("mac os x") >= 0) ret.apple = true;
+        if(ua.indexOf("mobile") >= 0) ret.mobile = true;
+        if(ua.indexOf("android") >= 0) ret.android = true;
+        if(ua.indexOf("iphone") >= 0) ret.iphone = true;
+        if(ua.indexOf("ipad") >= 0) ret.ipad = true;
+        if(ua.indexOf("firefox") >= 0) ret.firefox = true;
+
+        if(ua.indexOf("chrome") >= 0) ret.chrome = true;
+        if(ua.indexOf("crios") >= 0) ret.chrome = true;
+        if(ua.indexOf("safari") >= 0) ret.safari = true;
+        if(ret.chrome) {
+            ret.safari = false;
+        }
+
+        console.log(JSON.stringify(ret));
+        return ret;
+    }
+
+    function install_app() {
+        var nav = getNavInfo();
+        if(nav.mobile && nav.safari) {
+            return;
+        }
+        console.log("do install")
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then( function(choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the SMART prompt');
+                window.location.href="index.html#?f=pwa";
+            } else {
+                console.log('User dismissed the SMART prompt');
+            }
+            deferredPrompt = null;
+        });
+
+    }
+    //h != null && h !=undefined && h.indexOf("f=pwa") == -1
+
+    if(!isInApp()) {
+        if('serviceWorker' in navigator) {
+            window.addEventListener("load", function(){
+                navigator.serviceWorker.register("smart-app.js")
+                    .then(function (registeration) {
+                        console.log("sw.js 注册成功", registeration.scope);
+                    })
+                    .catch(function(err){
+                        console.log("sw.js 注册失败",err);
+                    });
+            });
+        }
+        window.addEventListener('beforeinstallprompt', function(e) {
+            console.log("beforeinstallprompt");
+            e.preventDefault();
+            deferredPrompt = e;
+            show_install_notice();
+        });
+    }
+
+    function show_install_notice() {
+        var nav = getNavInfo();
+        if(!nav.android) {
+            $("#show_pwa").show();
+            $("#safari-guide").hide();
+            $("#pwa-guide").show();
+        };
+
+
+    }
+
+    function web_init() {
+        var nav = getNavInfo();
+        if(nav.android) {
+            $("#show_android").show();
+        }
+
+        if(!isInApp()) {
+            if (nav.mobile && nav.safari) {
+                $("#show_pwa").show();
+                $("#normal-guide").hide();
+                $("#safari-guide").show();
+            }
+        }
+
+        if(isWeixin()) {
+            setDefaultLang("zh");
+        } else {
+            setDefaultLang("en");
+        }
+
+
+        var tpls = ["tmpls/start.html"];
+
+        var loaded = 0;
+        for(var i = 0; i < tpls.length; i ++) {
+            $.get(tpls[i], function (data) {
+                $("#TPLS").append(data);
+                loaded ++;
+                if(loaded == tpls.length) {
+                    C("T_START",{});
+                    show_device_list();
+                }
+            });
+        }
+
+        ScrollAction(function(){
+            show_device_list();
+        });
+    }
+
+
+</script>
+
+</html>

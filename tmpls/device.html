@@ -1,0 +1,322 @@
+<script id="T_LOADING" type="text/x-jsrender">
+    <div id="div_showLoading" style="padding-top:100px;vertical-align:middle;text-align: center;">
+           <img src="images/loading.gif" style="width:100px;">
+    </div>
+</script>
+
+
+
+<script id="T_DEVICE_CONTROL" type="text/x-jsrender">
+     <div class="div_p" style="height:60px;padding-top:20px">
+        <div class="eff_name" id="div_eff_name"></div>
+        <div class="eff_list"></div>
+    </div>
+    <div class="div_p" style="height:3px;">
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_9"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_8"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_7"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_6"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_5"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_4"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_3"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_2"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_1"></div></div>
+    </div>
+
+
+
+    <div id="sync_container" style="position:relative;width:100%">
+        <div class="icon_b1 go_left" ></div>
+        <canvas id="sync_cav_bg" style="position:absolute"></canvas>
+        <canvas id="sync_cav" style="position:absolute;"></canvas>
+        <div class="icon_b1 go_right"></div>
+    </div>
+
+    <div class="div_p" style="height:70px;">
+        <div class="ctrl_btn"><div class="btn_auto_mode ctrl_btn_c ctrl_play_rand "></div></div>
+        <div class="ctrl_btn"><div class="btn_bright ctrl_btn_c ctrl_bright_low"></div></div>
+        <div class="ctrl_btn"><div class="btn_speed_inc ctrl_btn_c ctrl_speed_inc"></div></div>
+        <div class="ctrl_btn"><div class="btn_speed_dec ctrl_btn_c ctrl_speed_dec"></div></div>
+        <div class="ctrl_btn"><div class="btn_power ctrl_btn_c ctrl_power_on"></div></div>
+    </div>
+
+</script>
+
+
+<script id="T_EFFECT_LIST" type="text/x-jsrender">
+
+    <div class="eff_list_p1">
+    {{for list}}
+        <div class="eff_list_p2">
+            <div class="eff_list_p3">
+            <img class="eff_list_p4 effect_item" cid="{{:cid}}" src="{{:image}}">
+            </div>
+            <div class="eff_list_p5 eff_item_{{:cid}}">{{:name}}</div>
+        </div>
+    {{/for}}
+    <div style="clear:both"></div>
+    </div>
+</script>
+<script id="T_COLOR" type="text/x-jsrender">
+        <div style="height:3px;width:100%;">
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_9"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_8"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_7"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_6"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_5"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_4"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_3"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_2"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_1"></div></div>
+    </div>
+
+    <div id="sync_container" style="position:relative;width:100%">
+        <canvas id="sync_cav" style="position:absolute;"></canvas>
+    </div>
+
+    <div class="div_p" style="height:30px;">
+        <div class="color_breath color_breath_on" data-i18n-html="im_breath_mode">呼吸效果</div>
+    </div>
+    <div class="div_p" style="height:40px">
+        <div class="color_pub" cid="0"><div class="color_pub_0 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="1"><div class="color_pub_1 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="2"><div class="color_pub_2 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="3"><div class="color_pub_3 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="4"><div class="color_pub_4 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="5"><div class="color_pub_5 color_pub_unsel"></div></div>
+        <div class="color_pub" cid="6"><div class="color_pub_6 color_pub_unsel"></div></div>
+    </div>
+    <div class="div_p" style="height:40px;">
+        <div class="color_user" cid="0"><div class="color_user_unsel color_user_0"></div></div>
+        <div class="color_user" cid="1"><div class="color_user_unsel color_user_1"></div></div>
+        <div class="color_user" cid="2"><div class="color_user_unsel color_user_2"></div></div>
+        <div class="color_user" cid="3"><div class="color_user_unsel color_user_3"></div></div>
+        <div class="color_user" cid="4"><div class="color_user_unsel color_user_4"></div></div>
+        <div class="color_user" cid="5"><div class="color_user_unsel color_user_5"></div></div>
+        <div class="color_user" cid="6"><div class="color_user_unsel color_user_6"></div></div>
+    </div>
+
+    <div class="div_p" style="margin-top:20px;height:30px;">
+        <div style="width:50%;float:left;height:30px;padding:0px 10px 0px 10px;"><div class="color_auto" data-i18n-html="ib_color_auto">自动颜色</div></div>
+        <div style="width:50%;float:right;height:30px;padding:0px 10px 0px 10px;"><div class="color_choose"  data-i18n-html="ib_color_choose">自选颜色</div></div>
+    </div>
+</script>
+
+<script id="T_COLOR_CHOOSE" type="text/x-jsrender">
+    <div style="width:100%" class="div_choose_p">
+
+        <div class="color_choose_1" id="color_choose_1"><img id="color_choose_pos_1" src="images/n_choose_pos.png" style="height:30px;margin-top:5px;margin-left:45%"></div>
+        <div class="color_choose_0" id="color_choose_0"><img id="color_choose_pos_0" src="images/n_choose_pos.png" style="height:30px;margin-top:5px;margin-left:-15px"></div>
+
+        <div class="color_choose_2">
+            <div class="color_choose_pub" cid="0"><div class="color_choose_pub_0 color_pub_unsel"></div></div>
+            <div class="color_choose_pub" cid="1"><div class="color_choose_pub_1 color_pub_unsel"></div></div>
+            <div class="color_choose_pub" cid="2"><div class="color_choose_pub_2 color_pub_unsel"></div></div>
+            <div class="color_choose_pub" cid="3"><div class="color_choose_pub_3 color_pub_unsel"></div></div>
+            <div class="color_choose_pub" cid="4"><div class="color_choose_pub_4 color_pub_unsel"></div></div>
+        </div>
+        <div class="color_choose_3">
+            <div class="color_choose_user" cid="0"><div class="color_choose_user_0 color_choose_user_unsel"></div></div>
+            <div class="color_choose_user" cid="1"><div class="color_choose_user_1 color_choose_user_unsel"></div></div>
+            <div class="color_choose_user" cid="2"><div class="color_choose_user_2 color_choose_user_unsel"></div></div>
+            <div class="color_choose_user" cid="3"><div class="color_choose_user_3 color_choose_user_unsel"></div></div>
+            <div class="color_choose_user" cid="4"><div class="color_choose_user_4 color_choose_user_unsel"></div></div>
+        </div>
+    </div>
+</script>
+
+
+<script id="T_TUTU" type="text/x-jsrender">
+
+    <div class="div_p" style="height:70px;padding-top:20px;">
+        <div style="float:left;width:50%;text-align:center;border-bottom:1px solid #F9C406;color:#F9C406" data-i18n-html="im_tutu">涂涂</div>
+        <div class="label_gua_off" style="float:right;width:50%;text-align:center;border-bottom:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)" data-i18n-html="im_gua">刮刮</div>
+    </div>
+
+    <div id="dooding_container" style="position:relative;width:100%">
+        <canvas id="dooding_cav_bg" style="position:absolute"></canvas>
+        <canvas id="dooding_cav" style="position:absolute;"></canvas>
+    </div>
+    <div class="div_p" style="height:40px;margin-top:10px">
+        <div class="touch_size">
+            <div v="0" class="touch_item touch_small touch_small_off"></div>
+            <div v="1" class="touch_item touch_mid touch_mid_on"></div>
+            <div v="2" class="touch_item touch_big touch_big_off"></div>
+        </div>
+    </div>
+    <div class="div_p" style="height:40px">
+        <div class="shua_color color_pub" cid="0"><div class="shua_color_0 color_pub_sel" style="background-color: #FF453A;"></div></div>
+        <div class="shua_color color_pub" cid="1"><div class="shua_color_1 color_pub_unsel" style="background-color: #32D74B;"></div></div>
+        <div class="shua_color color_pub" cid="2"><div class="shua_color_2 color_pub_unsel" style="background-color: #0A84FF"></div></div>
+        <div class="shua_color color_pub" cid="3"><div class="shua_color_3 color_pub_unsel" style="background-color: #FF9F0A;"></div></div>
+        <div class="shua_color color_pub" cid="4"><div class="shua_color_4 color_pub_unsel" style="background-color: #FF375F;"></div></div>
+        <div class="shua_color color_pub" cid="6"><div class="shua_color_6 color_pub_unsel" style="background-color: rgb(0, 0, 0);"></div></div>
+    </div>
+
+    <div class="div_p" style="height:40px;margin-top:10px;">
+        <div class="shua_clear" style="float:left;width:50%;height:30px;padding:0px 10px 0px 10px">
+        <div class="btn_c1" style="width:100%;" data-i18n-html="ib_clear">清空</div>
+        </div>
+        <div class="color_choose" style="float:right;width:50%;height:30px;padding:0px 10px 0px 10px">
+        <div class="btn_c2" style="width:100%" data-i18n-html="ib_color_choose" >自选颜色</div>
+        </div>
+    </div>
+</script>
+
+
+<script id="T_GUAGUA" type="text/x-jsrender">
+
+
+    <div class="w-100" style="padding:20px 25px 20px 25px;height:70px">
+    <div class="label_shua_off" style="float:left;width:50%;text-align:center;border-bottom:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)"  data-i18n-html="im_tutu">涂涂</div>
+    <div style="float:right;width:50%;text-align:center;border-bottom:1px solid #F9C406;color:#F9C406" data-i18n-html="im_gua">刮刮</div>
+    </div>
+
+
+
+    <div id="sync_container" style="position:relative;width:100%">
+        <div class="icon_b1 go_left" ></div>
+        <canvas id="sync_cav" style="position:absolute;"></canvas>
+        <canvas id="gua_cav_bg" style="position:absolute"></canvas>
+        <div class="icon_b1 go_right"></div>
+    </div>
+    <div style="width:100%;height:60px;padding:10px 40px 10px 40px">
+    <div class="touch_size">
+        <div v="0" class="touch_item touch_small touch_small_off"></div>
+        <div v="1" class="touch_item touch_mid touch_mid_on"></div>
+        <div v="2" class="touch_item touch_big touch_big_off"></div>
+    </div>
+    </div>
+    <div class="w-100" style="height:40px;display:flex;justify-content: center;">
+        <div class="gua_reset" data-i18n-html="ib_reset">重置</div>
+    </div>
+</script>
+
+
+
+<script id="T_TEXT" type="text/x-jsrender">
+    <div class="div_p" style="height:60px;padding-top:20px;">
+        <div class="text_tab_ctrl tab_on" style="float:left;" data-i18n-html="im_text_tab_play">播放设置</div>
+        <div class="text_tab_color tab_off" style="float:right;" data-i18n-html="im_text_tab_color">颜色设置</div>
+    </div>
+    <div class="text_show_ctrl">
+
+        <div class="div_p" style="height:30px;margin-top:10px;">
+            <div style="padding-right:70px;width:100%;height:30px;float:left;">
+                <input type="text" class="text_txt_input" id="tx_text" data-i18n-placeholder="im_text_holder">
+            </div>
+            <div style="float:right;margin-left:-70px">
+            <div class="text_start"></div>
+            <div class="text_stop"></div>
+            </div>
+        </div>
+        <div class="div_p" style="margin-top:10px;height:40px">
+            <div style="float:left;height:40px;">
+                <div style="float:left;height:40px;padding-top:20px;line-height:20px;color:#FFFFFF" data-i18n-html="im_text_speed">速度</div>
+                <div class="flex_center" style="float:left;margin-left:5px;width:95px;">
+                    <div class="cb_speed" speed="1" style="width:32.5%;height:40px;padding-top:35px;">
+                        <div class="speed_low" style="height:5px;width:100%;background-color:#FFFFFF"></div>
+                    </div>
+                    <div class="cb_speed" speed="2" style="width:35%;height:40px;padding-top:20px;padding-left:2px;padding-right:2px;">
+                        <div class="speed_mid" style="height:20px;width:100%;background-color:#F9C406"></div>
+                    </div>
+                    <div class="cb_speed" speed="3" style="width:32.5%;height:40px;padding-top:10px">
+                        <div class="speed_hig" style="height:30px;width:100%;background-color:#FFFFFF"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="float:right">
+            <div class="flex_center" style="float:left;height:40px;padding-top:8px;">
+                <input type="text" class="text_txt_input" data-i18n-placeholder="im_text_duration" id="tx_time" style="margin-left:15px;width:70px;height:30px;">
+                <div style="color:#FFFFFF" data-i18n-html="im_text_dure">秒</div>
+            </div>
+            </div>
+        </div>
+
+        <div class="div_p" style="margin-top:30px;height:25px">
+            <div class="btn_c1 text_reset" style="width:auto;float:left;" data-i18n-html="ib_reset">重置</div>
+            <div style="float:right;"  class="text_bg_anim text_bg_anim_off" data-i18n-html="im_text_bg">动画背景</div>
+
+        </div>
+
+        <div class="div_p" style="height:1px;margin-top:10px">
+            <div style="width:100%;height:1px;background-color:rgba(255,255,255,0.15)"></div>
+        </div>
+
+    </div>
+
+    <div class="text_show_color" style="display:none">
+        <div class="div_p" style="height:25px">
+            <div style="float:right" class="btn_c2  tx_color_comm" data-i18n-html="ib_text_rec_color">推荐颜色</div>
+        </div>
+
+        <div class="div_p" style="height:20px;line-height:20px;color:rgba(255,255,255,0.5)" data-i18n-html="im_text_color">文字颜色</div>
+        <div class="div_p" style="margin-top:5px;height:30px">
+            <div class="flex_center" style="float:left;height:30px;width:100%">
+                <div class="text_color_p" cid="0"><div class="text_color_0 text_color "></div></div>
+                <div class="text_color_p" cid="1"><div class="text_color_1 text_color "></div></div>
+                <div class="text_color_p" cid="2"><div class="text_color_2 text_color "></div></div>
+                <div class="text_color_p" cid="3"><div class="text_color_3 text_color "></div></div>
+                <div class="text_color_p" cid="4"><div class="text_color_4 text_color "></div></div>
+            </div>
+        </div>
+        <div class="div_p" style="height:1px;margin-top:10px">
+            <div style="width:100%;height:1px;background-color:rgba(255,255,255,0.15)"></div>
+        </div>
+
+        <div class="div_p" style="margin-top:10px;height:20px;line-height:20px;color:rgba(255,255,255,0.5)" data-i18n-html="im_text_bg_color">背景颜色</div>
+        <div class="div_p" style="margin-top:5px;height:30px">
+            <div class="flex_center" style="float:left;height:30px;width:100%">
+                <div class="text_color_p color_bg" cid="0"><div class="text_bgcolor_0 text_color "></div></div>
+                <div class="text_color_p color_bg" cid="1"><div class="text_bgcolor_1 text_color "></div></div>
+                <div class="text_color_p color_bg" cid="2"><div class="text_bgcolor_2 text_color "></div></div>
+                <div class="text_color_p color_bg" cid="3"><div class="text_bgcolor_3 text_color "></div></div>
+                <div class="text_color_p color_bg" cid="4"><div class="text_bgcolor_4 text_color "></div></div>
+            </div>
+        </div>
+        <div class="div_p" style="height:1px;margin-top:10px">
+            <div style="width:100%;height:1px;background-color:rgba(255,255,255,0.15)"></div>
+        </div>
+
+    </div>
+
+    <div id="sync_container" style="position:relative;width:100%">
+        <div class="icon_b1 go_left" ></div>
+        <canvas id="sync_cav_bg" style="position:absolute"></canvas>
+        <canvas id="sync_cav" style="position:absolute;"></canvas>
+        <div class="icon_b1 go_right"></div>
+    </div>
+
+</script>
+
+
+
+<script id="T_MUSIC" type="text/x-jsrender">
+        <div style="height:3px;width:100%;">
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_9"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_8"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_good net_7"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_6"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_normal net_5"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_4"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_poor net_3"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_2"></div></div>
+        <div class="net_state_1"><div class="net_state_2 net_state_none net_1"></div></div>
+    </div>
+
+    <div id="sync_container" style="position:relative;width:100%">
+        <canvas id="sync_cav" style="position:absolute;"></canvas>
+    </div>
+    <!--
+    <div class="div_p" style="margin-top:10px;height:30px;">
+        <div style="float:right;height:30px;line-height:30px;" class="btn_c1 exit_music">退出音乐模式</div>
+    </div>
+    -->
+    <div class="div_p" style="margin-top:10px;">
+    {{for list}}
+         <div class="mode_music mode_music_{{:id}}" mid="{{:id}}">{{:name}}</div>
+    {{/for}}
+    <div class="exit_music music_mode_unsel" data-i18n-html="im_music_exit">退出音乐模式</div>
+        <div style="clear:both"></div>
+    </div>
+</script>

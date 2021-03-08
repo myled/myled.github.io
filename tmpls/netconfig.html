@@ -1,0 +1,93 @@
+<script id="T_NET_CONFIG_STEP1" type="text/x-jsrender">
+<div class="div_net_config_s1">
+    <div style="width:100%;height:200px;display:flex;align-items:center;justify-content: center">
+        <img class="step_img" src="images/loading.gif" style="width:100px">
+    </div>
+    <div style="width:100%;padding:25px;">
+        <div class="step_m1" class="step_m1" data-i18n-html="im_net_searching">
+            正在查找设备...
+        </div>
+    </div>
+
+    <div style="width:100%;padding:0px 25px 0px 25px">
+        <div class="step_m2" data-i18n-html="im_net_connectto">
+            请先将手机网络连接到控制器提供的WIFI热点上
+        </div>
+    </div>
+    <div style="width:100%;padding:0px 25px 0px 25px">
+        <div class="step_m3" data-i18n-html="im_net_hotname">
+            热点名称为DNxxxxxxxx
+        </div>
+    </div>
+    <div class="success_btns" style="padding:25px;display:none">
+
+        <div style="width:100%;" class="btn_normal1_2 btn_gohome" data-i18n-html="ib_net_home">
+            回设备列表
+        </div>
+    </div>
+    <div class="failed_btns" style="padding:25px;display:none">
+        <div style="float:left;width:45%" class="btn_normal1 btn_airkiss" data-i18n-html="ib_net_retry">
+             再试一次
+        </div>
+        <div style="float:right;width:45%;" class="btn_normal1_2 btn_gohome"  data-i18n-html="ib_net_home">
+            回设备列表
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="T_NET_CONFIG_STEP2" type="text/x-jsrender">
+<div class="div_net_config_s2" style="color:#FFFFFF">
+    <div class="net_config_found" data-i18n-html="im_net_find_device">找到以下设备</div>
+    <div style="display: flex;
+        align-items: center;
+        justify-content: center;height:40px;"><img src="images/n_icon_kzq.png" style="height:25px;"><span class="found_device_id"></div>
+    <div style="margin:20px;text-align:center;border-bottom:1px solid #FFFFFF20;padding-bottom:40px;" data-i18n-html="im_net_select_aplist">选择要连接的WI-FI网络</div>
+    <div style="margin:20px;height:40px;">
+        <div style="float:left;color:rgba(255,255,255, 0.30)" data-i18n-html="im_net_aplist">附近的无线网络</div>
+        <div style="float:right;" class="btn_rescan btn_disable2" data-i18n-html="ib_net_refresh_ap">刷新</div>
+    </div>
+    <div id="div_device_ap_list" style="padding:0px 20px 0px 20px">
+    </div>
+</div>
+</script>
+
+<script id="T_NET_CONFIG_ING" type="text/x-jsrender">
+    <div class="div_net_config_ing">
+        <div style="width:100%;height:200px;display:flex;align-items:center;justify-content: center">
+            <img src="images/loading.gif" style="width:100px">
+        </div>
+        <div style="color:#FFFFFF;margin:20px;text-align:center">配置中...</div>
+        <div style="color:#F9C406;text-align:center;">请将手机网络切回到qjy</div>
+    </div>
+</script>
+
+<script id="T_NET_AP_LIST"  type="text/x-jsrender">
+    {{for list}}
+    <div class="ap_list_item {{:css}}" ap_name="{{:name}}">
+        <div class="ap_list_item_title">{{:title}}</div>
+        <div class="ap_list_item_bg"></div>
+    </div>
+    <div  </div>
+    {{/for}}
+
+</script>
+
+<script  id="T_NET_SET_DIA"  type="text/x-jsrender">
+     <div style="width:100%;padding:20px">
+    <div class="setting_item_cc">
+
+        <div style="padding-left:10px;"><input id="in_ap_name" type="text" class="setting_input" data-i18n-placeholder="im_net_wifiname" ></div>
+    </div>
+
+    <div class="setting_item_cc">
+        <div style="padding-left:10px;">
+            <input id="in_ap_pass" type="password" class="setting_input"
+            style="padding-right:30px" data-i18n-placeholder="im_net_wifipass">
+            <img class="netconfig_eyes" src="images/n_close_eyes.png" style="height:30px;width:30px;float:right;margin-left:-30px;margin-top:-4px" /></div>
+    </div>
+    <div style="color:#F9C406;margin-top:15px;" data-i18n-html="im_net_pass_len">
+        密码为空或者长度大于7位
+    </div>
+    </div>
+</script>
